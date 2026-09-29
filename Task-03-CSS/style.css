@@ -1,0 +1,44 @@
+/* Step 3: Body background */
+body {
+    background-color: orangered;
+}
+
+/* Step 5: All elements having class "head" */
+.head {
+    color: darkblue;
+}
+
+/* Step 6: Background of second heading */
+#bgline {
+    background-color: lime;
+}
+
+/* Step 7: Second heading text color */
+h2#bgline {
+    color: red;
+}
+
+/* Step 8: All paragraphs */
+p {
+    color: white;
+}
+
+/* Step 9 + 10: Second paragraph */
+#para {
+    color: black;
+    font-size: 20px;
+}
+
+/* Styling the list */
+ul {
+    color: yellow;
+}
+
+ol {
+    color: blue;
+}
+
+/* Styling links without using class/id */
+a {
+    color: blue;
+}
