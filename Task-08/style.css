@@ -1,0 +1,89 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  color: #475569;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+}
+.logo { font-size: 28px; font-weight: 700; }
+.nav-right { display: flex; align-items: center; gap: 12px; }
+
+.username {
+  background: #e6f6ff;
+  color: #0aa5ff;
+  font-weight: 600;
+  padding: 12px 18px;
+  border-radius: 14px;
+}
+
+.desktop-links { display: flex; gap: 28px; }
+.desktop-links a { text-decoration: none; color: inherit; font-weight: 500; }
+
+/* Hamburger hidden by default */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  flex-direction: column;
+  gap: 4px;
+}
+.menu-btn .bar { width: 20px; height: 2px; background: #333; display: block; }
+.menu-btn:focus { outline: none; }
+
+/* Menu list hidden by default */
+.menu-list { display: none; }
+
+/* ---------- Hero ---------- */
+.hero { padding: 10px 20px 40px; max-width: 600px; }
+.hero h1 { font-size: 32px; line-height: 1.2; color: #475569; }
+.hero h1 span { color: #0aa5ff; }
+.hero p { margin: 14px 0 24px; font-size: 14px; color: #94a3b8; }
+.cta {
+  display: inline-block;
+  background: linear-gradient(90deg, #0aa5ff, #35bbff);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 22px 36px;
+  border-radius: 24px;
+}
+
+/* ---------- Mobile only ---------- */
+@media (max-width: 768px) {
+  .desktop-links { display: none; }
+  .menu-btn { display: flex; }
+
+  .menu-list {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100vh;
+    background: #000;
+    color: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    z-index: 10;
+  }
+  .menu-list a { color: #fff; text-decoration: none; font-size: 16px; }
+
+  /* Show the list while the button is focused.
+     Sibling selector: the div must come AFTER the button. */
+  .menu-btn:focus + .menu-list,
+  .menu-list:hover {           /* keeps it open long enough to click a link */
+    display: flex;
+  }
+}
