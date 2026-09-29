@@ -1,0 +1,253 @@
+/* Remove default spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Body */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #222222;
+    overflow: hidden;
+}
+
+
+/* =========================
+   NAVBAR
+   ========================= */
+
+.navbar {
+    height: 12vh;
+    width: 100%;
+    padding: 0 7vw;
+
+    background-color: white;
+
+    /* No flex used */
+    line-height: 12vh;
+}
+
+
+/* Logo */
+.logo {
+    display: inline-block;
+    width: 25%;
+
+    font-size: 1.6rem;
+    font-weight: bold;
+    vertical-align: middle;
+}
+
+
+/* Navigation Links */
+.nav-links {
+    display: inline-block;
+    width: 48%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #555555;
+
+    font-size: 1rem;
+    margin: 0 1.1vw;
+
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #168bd5;
+}
+
+
+/* Username */
+.username {
+    display: inline-block;
+    width: 25%;
+
+    text-align: right;
+    vertical-align: middle;
+
+    color: #168bd5;
+    background-color: #eaf6ff;
+
+    padding: 0.8vh 1.2vw;
+    border-radius: 8px;
+
+    line-height: normal;
+}
+
+
+/* =========================
+   HERO SECTION
+   ========================= */
+
+.hero {
+    width: 100%;
+    height: 88vh;
+
+    padding: 10vh 10vw 5vh 10vw;
+
+    white-space: nowrap;
+}
+
+
+/* Left Hero Div */
+.hero-left {
+    display: inline-block;
+
+    width: 52%;
+    vertical-align: middle;
+
+    white-space: normal;
+}
+
+
+/* Hero Heading */
+.hero-left h1 {
+    font-size: 3.2vw;
+    line-height: 1.2;
+
+    color: #252d35;
+
+    margin-bottom: 2vh;
+}
+
+.hero-left h1 span {
+    color: #168bd5;
+}
+
+
+/* Description */
+.hero-left p {
+    width: 85%;
+
+    font-size: 1.15vw;
+    line-height: 1.7;
+
+    color: #777777;
+
+    margin-bottom: 4vh;
+}
+
+
+/* Button */
+.hero-left button {
+    background-color: #168bd5;
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    padding: 1.8vh 2.5vw;
+
+    font-size: 1vw;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.hero-left button:hover {
+    background-color: #0876bd;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   RIGHT HERO DIV
+   ========================= */
+
+.hero-right {
+    display: inline-block;
+
+    width: 47%;
+    vertical-align: middle;
+
+    text-align: center;
+
+    white-space: normal;
+}
+
+
+/* Laundry Image */
+.hero-right img {
+    width: 75%;
+    max-width: 420px;
+
+    height: auto;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+@media (max-width: 768px) {
+
+    body {
+        overflow: auto;
+    }
+
+    .navbar {
+        height: auto;
+        padding: 20px 5vw;
+        line-height: normal;
+    }
+
+    .logo,
+    .nav-links,
+    .username {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .nav-links a {
+        margin: 0 8px;
+        font-size: 14px;
+    }
+
+    .hero {
+        height: auto;
+        padding: 5vh 7vw;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .hero-left,
+    .hero-right {
+        width: 100%;
+        display: block;
+    }
+
+    .hero-left {
+        margin-bottom: 5vh;
+    }
+
+    .hero-left h1 {
+        font-size: 32px;
+    }
+
+    .hero-left p {
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .hero-left button {
+        font-size: 14px;
+    }
+
+    .hero-right img {
+        width: 60%;
+    }
+}
