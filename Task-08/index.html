@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laundry Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">Logo</div>
+
+    <!-- Desktop links (hidden on mobile) -->
+    <nav class="desktop-links">
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">About Us</a>
+      <a href="#">Contact Us</a>
+    </nav>
+
+    <div class="nav-right">
+      <span class="username">Username</span>
+
+      <!-- Hamburger: hidden by default, visible on mobile only -->
+      <button class="menu-btn" aria-label="Open menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <!-- Sibling of the button so :focus + works -->
+      <div class="menu-list">
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="hero">
+    <h1>Revitalize Your Clothes with Expert <span>Laundry Services!</span></h1>
+    <p>From premium dry cleaning to swift wash and fold, we deliver care and convenience. Schedule a pickup and rediscover the freshness of your clothes today!</p>
+    <a class="cta" href="#">Book a service today!</a>
+  </main>
+</body>
+</html>
