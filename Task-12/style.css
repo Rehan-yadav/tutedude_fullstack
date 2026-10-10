@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+}
+
+.card {
+  background: #ffffff;
+  width: 90%;
+  max-width: 420px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+h1 {
+  font-size: 22px;
+  color: #1565c0;
+  margin-top: 0;
+}
+
+.values {
+  text-align: left;
+  background: #f5f9ff;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.values p {
+  margin: 8px 0;
+  color: #333;
+}
+
+.values span {
+  font-weight: bold;
+}
+
+.formula {
+  font-size: 18px;
+  color: #555;
+  margin: 20px 0;
+}
+
+.result {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2e7d32;
+  background: #e8f5e9;
+  padding: 12px;
+  border-radius: 8px;
+  min-height: 44px;
+}
