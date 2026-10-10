@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thala 7. Sneaker Store</title>
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<header>
+  <a class="logo" href="#home">Thala 7.</a>
+  <nav><a href="#home">Home</a><a href="#product">Shop</a><a href="#home">About</a><a href="#product">Brands</a><a href="#home">Contact</a></nav>
+  <div class="right">
+    <button class="ibtn" aria-label="Search" onclick="toast('Search coming soon')"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button>
+    <a class="ibtn" href="#cart" aria-label="Cart"><svg viewBox="0 0 24 24"><path d="M6 7h12l-1 13H7zM9 7a3 3 0 016 0"/></svg><span class="badge" id="cnt">0</span></a>
+    <div class="av" aria-label="Profile">A</div>
+  </div>
+</header>
+<main id="app"></main>
+<div id="toast" role="status"></div>
+
+<script>
+const PRODUCT={id:1,name:"Seven By M.S.Dhoni Women's Hogun Multi-Color Running Shoes",price:1334,desc:"For exceptional fit, feel and smooth transitions get going with these dual mid sole technology shoes constructed with molded EVS sock liner, gel at heel area, rubber outsole, fused upper and breathable mesh."};
+const VARS=[["#9a9a9a","#33a3dc","#f2e82b"],["#e9e9ea","#ff8a00","#2b3138"],["#2b3138","#2f6bff","#9a9a9a"],["#f2e82b","#e5484d","#2b3138"],["#9a9a9a","#2e9e5b","#ffffff"]];
+let cart=[];
+let coupon=null,sel=0,qty=1,tab="Card";
+const $=s=>document.querySelector(s),inr=n=>"₹"+Math.round(n).toLocaleString("en-IN");
+
+function shoe(c,w=420){return `<svg viewBox="0 0 420 240" width="${w}" style="max-width:100%" role="img" aria-label="Sneaker"><ellipse cx="215" cy="214" rx="170" ry="9" fill="#000" opacity=".12"/><path d="M40 170c0-30 8-50 30-52l70-10c20-4 34-18 48-44 8-14 24-18 36-8l24 30c14 18 40 30 74 38 30 7 46 22 46 44v14H40z" fill="${c[0]}"/><path d="M178 66c8-14 24-18 36-8l24 30-36 10c-14-4-26-18-24-32z" fill="${c[1]}"/><path d="M70 118l70-10c14-3 26-10 36-22l30 40c-30 18-84 24-136 6-2-6-2-10 0-14z" fill="${c[1]}" opacity=".85"/><path d="M200 100l50 14M190 116l50 14M180 132l50 14" stroke="${c[2]}" stroke-width="7" stroke-linecap="round"/><path d="M40 176h344v22c0 8-6 14-14 14H64c-14 0-24-14-24-36z" fill="#f1f1f1"/><path d="M40 190h344" stroke="#cfd3d8" stroke-width="4"/><path d="M90 196h40M150 196h40" stroke="${c[1]}" stroke-width="6" stroke-linecap="round"/></svg>`}
+
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove("show"),1800)}
+function totals(){const sub=cart.reduce((a,i)=>a+i.p*i.q,0),tax=sub*.05,disc=coupon?sub*.1:0;return{sub,tax,disc,tot:sub+tax-disc}}
+function count(){$("#cnt").textContent=cart.reduce((a,i)=>a+i.q,0)}
+
+function home(){return `<section class="hero"><div class="hl"><small>SEVEN</small><h1>7!! Thala For a <b>Reason!</b></h1><p>Light, cushioned running shoes built for long days and short deadlines. Pick your pair and be on the road today.</p><button class="btn" onclick="location.hash='product'">Shop Now</button></div><div class="hr">${shoe(VARS[0],520)}</div></section>
+<section class="stats"><div><strong>2k+</strong><span>Reviews</span></div><div><strong>30k+</strong><span>Customers</span></div><div><strong>High</strong><span>Quality</span></div><div><strong>4.5/5</strong><span>Rating</span></div></section>`}
+
+function product(){return `<div class="crumb">Home &gt; THALA FOR A REASON &gt; ${PRODUCT.name}</div>
+<section class="pd"><div class="pimg" id="big">${shoe(VARS[sel],440)}</div><div class="pinfo"><h2>${PRODUCT.name}</h2><p>${PRODUCT.desc}</p>
+<div class="price"><span class="p">${inr(PRODUCT.price)}</span><span class="s">Save 12%<small>Inclusive of all Taxes</small></span></div>
+<div class="buy"><select id="q" aria-label="Quantity">${[1,2,3,4,5].map(n=>`<option ${n==qty?"selected":""}>${n}</option>`).join("")}</select><button class="btn or" onclick="add()">Add to cart</button></div></div></section>
+<div class="gal" aria-label="Product images">${VARS.map((v,i)=>`<button class="${i==sel?"on":""}" onclick="pick(${i})" aria-label="Image ${i+1}">${shoe(v,150)}</button>`).join("")}</div>`}
+
+function pick(i){sel=i;$("#big").innerHTML=shoe(VARS[i],440);document.querySelectorAll(".gal button").forEach((b,j)=>b.classList.toggle("on",j==i))}
+function add(){qty=+$("#q").value;const f=cart.find(i=>i.v==sel);f?f.q+=qty:cart.push({n:"Seven By M.S.Dhoni W...",p:PRODUCT.price,q:qty,v:sel});count();toast("Added to cart")}
+
+function summary(btn){const t=totals();return `<div class="card"><label for="cp" style="margin-top:0">Enter Coupon Code</label><div class="cpn"><input id="cp" placeholder="COUPON CODE" value="${coupon||""}"><button class="btn bl" onclick="apply()">Apply Coupon</button></div><div class="msg" id="cm" style="margin:-8px 0 8px"></div>
+<div class="row"><span>Sub Total</span><span>${inr(t.sub)}</span></div><div class="row"><span>Taxes (if applicable)</span><span>${inr(t.tax)}</span></div><div class="row"><span>Discount</span><span>${inr(t.disc)}</span></div><div class="row t"><span>Total</span><span>${inr(t.tot)}</span></div></div>
+<button class="btn pay" onclick="${btn}">Pay Now ${inr(t.tot)}</button><div class="rz"><i>SECURE</i><em>Razorpay</em><i>100%</i></div>`}
+function apply(){const c=$("#cp").value.trim().toUpperCase();if(c==="SNEAK10"){coupon=c;go()}else{$("#cm").style.color="#e5484d";$("#cm").textContent="Invalid code. Try SNEAK10."}}
+
+function cartV(){const rows=cart.map((i,k)=>`<tr><td>${i.n}</td><td><span class="qty"><button onclick="chg(${k},-1)" aria-label="Decrease">-</button>${i.q}<button onclick="chg(${k},1)" aria-label="Increase">+</button></span></td><td>${inr(i.p*i.q)}</td><td><button class="x" onclick="rm(${k})" aria-label="Remove">✕</button></td></tr>`).join("");
+return `<div class="wrap"><h2 style="font-size:30px;margin:0 0 20px">Shopping Cart</h2><div class="cols"><div class="L">${cart.length?`<table><tr><th>Product</th><th>Quantity</th><th>Price</th><th></th></tr>${rows}</table>`:`<div class="empty">Your cart is empty. Add a pair to get started.</div>`}<button class="back" onclick="location.hash='product'">‹ Continue Shopping</button></div>
+<div class="R">${cart.length?summary("location.hash='checkout'"):""}</div></div></div>`}
+function chg(k,d){cart[k].q=Math.max(1,cart[k].q+d);count();go()}
+function rm(k){cart.splice(k,1);count();go()}
+
+function checkout(){const tb=["Card","Crypto","Bank"].map(t=>`<button class="${t==tab?"on":""}" onclick="tab='${t}';go()">${t}</button>`).join("");
+return `<div class="wrap"><div class="cols"><div class="L"><div style="color:var(--mut);font-size:13px">Checkout</div><h3 style="margin:14px 0 0">Contact Details</h3><label for="em">Email ID</label><input id="em" type="email" placeholder="John Doe">
+<h3 style="margin:26px 0 0">Payment</h3><div class="card" style="margin-top:10px"><div class="tabs">${tb}</div>${tab=="Card"?`<label>Card Number</label><input inputmode="numeric" placeholder="1234 5678 9012 3456"><div class="two"><div><label>Expiry</label><input placeholder="MM/YY"></div><div><label>CVV</label><input placeholder="•••" type="password" maxlength="4"></div></div><div class="two"><div><label>Country</label><select style="width:100%"><option>India</option><option>USA</option><option>UK</option></select></div><div><label>ZIP</label><input inputmode="numeric" placeholder="395001"></div></div>`:`<div class="empty">${tab} payment opens in Razorpay after you click Pay Now.</div>`}</div></div>
+<div class="R sum"><h3 style="text-align:center;margin-top:0">Order Summary</h3>${summary("done()")}</div></div></div>`}
+function done(){const e=$("#em").value;if(!/\S+@\S+\.\S+/.test(e)){toast("Enter a valid email ID");$("#em").focus();return}cart=[];coupon=null;count();$("#app").innerHTML=`<div class="wrap"><div class="empty"><h2 style="color:var(--ink)">Order placed</h2>A confirmation will be sent to ${e.replace(/</g,"")}.<br><br><button class="btn or" onclick="location.hash='home'">Back to home</button></div></div>`}
+
+function go(){const h=(location.hash||"#home").slice(1);const m={home,product,cart:cartV,checkout};$("#app").innerHTML=(m[h]||home)();count();if(h=="checkout"&&!cart.length)location.hash="cart"}
+addEventListener("hashchange",()=>{go();scrollTo(0,0)});go();
+</script></body></html>
