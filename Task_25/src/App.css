@@ -1,0 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+}
+
+.app {
+  width: 100%;
+}
+
+.navbar {
+  height: 93px;
+  background: #f8f8f8;
+  border-top: 1px solid #333;
+  display: flex;
+  align-items: center;
+  padding: 0 26px;
+  gap: 55px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  background: #fff3df;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+}
+
+.navbar nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navbar nav a {
+  text-decoration: none;
+  color: #222;
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #ff7139;
+}
+
+.products-section {
+  padding: 45px 7% 60px;
+  text-align: center;
+}
+
+.category-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.category-buttons button {
+  background: white;
+  color: #222;
+  border: 1px solid #ddd;
+  padding: 10px 22px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.category-buttons button.active,
+.category-buttons button:hover {
+  background: #ff7139;
+  color: white;
+  border-color: #ff7139;
+}
+
+.shoe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.shoe-card {
+  background: white;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: left;
+}
+
+.shoe-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.category-label {
+  display: inline-block;
+  margin-top: 12px;
+  color: #ff7139;
+  font-size: 13px;
+}
+
+.shoe-card h3 {
+  margin: 10px 0;
+}
+
+.price {
+  color: #ff7139;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+button {
+  border: none;
+  background: #ff7139;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #e65320;
+}
+
+.shoe-card button {
+  width: 100%;
+}
+
+.cart-section {
+  background: white;
+  margin: 20px 7%;
+  padding: 35px;
+  border-radius: 12px;
+}
+
+.cart-section h2,
+.about-section h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.cart-subtitle {
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.empty {
+  color: gray;
+  margin: 20px 0;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 18px 0;
+}
+
+.cart-item h3 {
+  margin-bottom: 8px;
+}
+
+.cart-item p {
+  margin: 5px 0;
+}
+
+.quantity-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.quantity-buttons button {
+  padding: 7px 13px;
+}
+
+.quantity-buttons span {
+  font-weight: bold;
+}
+
+.total {
+  text-align: right;
+  margin-top: 25px;
+  color: #ff7139;
+}
+
+.about-section {
+  padding: 65px 10%;
+  background: #eee;
+  text-align: center;
+}
+
+.about-section p {
+  max-width: 800px;
+  margin: 15px auto;
+  line-height: 1.8;
+  color: #555;
+}
+
+.footer {
+  background: #171717;
+  color: white;
+  text-align: center;
+  padding: 35px 15px;
+}
+
+.footer h2 {
+  margin-bottom: 12px;
+}
+
+.footer p {
+  margin: 10px 0;
+  color: #ccc;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    height: auto;
+    padding: 15px 20px;
+    gap: 25px;
+  }
+
+  .navbar nav {
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .shoe-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    gap: 15px;
+  }
+
+  .navbar nav {
+    gap: 12px;
+  }
+
+  .navbar nav a {
+    font-size: 12px;
+  }
+
+  .shoe-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-section {
+    margin: 15px;
+    padding: 20px;
+  }
+}
