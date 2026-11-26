@@ -1,0 +1,37 @@
+
+.error {
+    background: #fee2e2;
+    color: #b91c1c;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+.success {
+    background: #dcfce7;
+    color: #15803d;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+.loading {
+    text-align: center;
+    padding: 25px;
+    color: #2563eb;
+}
+
+.empty {
+    text-align: center;
+    padding: 25px;
+    color: #64748b;
+}
+
+.todo-info {
+    flex: 1;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
