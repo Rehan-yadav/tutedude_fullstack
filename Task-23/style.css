@@ -1,0 +1,15 @@
+/* Staggered animation delays (hero entry animations) */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.25s; }
+.delay-3 { animation-delay: 0.4s; }
+.delay-4 { animation-delay: 0.55s; }
+
+/* Small polish */
+::selection {
+  background: #a7f3d0; /* emerald-200 */
+  color: #064e3b;      /* emerald-900 */
+}
+
+html {
+  scroll-padding-top: 5rem; /* sticky navbar ke neeche anchor links sahi dikhein */
+}

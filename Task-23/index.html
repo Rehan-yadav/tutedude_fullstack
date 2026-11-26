@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greenwood Public Library</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(24px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            fadeIn: {
+              '0%': { opacity: '0' },
+              '100%': { opacity: '1' },
+            },
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.8s ease-out both',
+            'fade-in': 'fadeIn 1s ease-out both',
+          },
+        },
+      },
+    };
+  </script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-white text-zinc-900 font-sans antialiased">
+
+  <!-- 1. NAVBAR -->
+  <header class="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-zinc-100">
+    <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="text-xl font-semibold tracking-tight">Greenwood</span>
+        <span class="text-[10px] uppercase tracking-widest bg-emerald-100 text-emerald-700 px-2 py-0.5 rounded-full">Open Sat</span>
+      </div>
+      <nav class="hidden md:flex items-center gap-8 text-sm text-zinc-600">
+        <a href="#sections" class="relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-zinc-900 after:transition-all after:duration-300 hover:after:w-full hover:text-zinc-900 transition-colors">Sections</a>
+        <a href="#gallery" class="relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-zinc-900 after:transition-all after:duration-300 hover:after:w-full hover:text-zinc-900 transition-colors">Gallery</a>
+        <a href="#membership" class="relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-zinc-900 after:transition-all after:duration-300 hover:after:w-full hover:text-zinc-900 transition-colors">Membership</a>
+        <a href="#events" class="relative after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-zinc-900 after:transition-all after:duration-300 hover:after:w-full hover:text-zinc-900 transition-colors">Events</a>
+      </nav>
+      <a href="#contact" class="rounded-full border border-zinc-900 px-5 py-2 text-sm bg-white text-zinc-900 hover:bg-zinc-900 hover:text-white transition-colors duration-300">Visit Us</a>
+    </div>
+  </header>
+
+  <!-- 2. HERO -->
+  <section class="max-w-7xl mx-auto px-6 pt-20 pb-16">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="animate-fade-up text-sm uppercase tracking-widest text-emerald-600 mb-6">Greenwood Public Library</p>
+        <h1 class="animate-fade-up delay-1 text-5xl sm:text-6xl lg:text-7xl font-light leading-[1.05] tracking-tight">
+          A quiet place for <span class="text-emerald-600">loud ideas.</span>
+        </h1>
+        <p class="animate-fade-up delay-2 mt-6 text-lg text-zinc-500 max-w-md">
+          Books, spaces and people, all under one roof for over four decades.
+        </p>
+        <div class="animate-fade-up delay-3 mt-8 flex flex-wrap gap-4">
+          <a href="#sections" class="rounded-full bg-zinc-900 text-white px-7 py-3 text-sm hover:bg-emerald-700 transition-colors duration-300">Explore Collection</a>
+          <a href="#membership" class="rounded-full border border-zinc-300 px-7 py-3 text-sm hover:border-zinc-900 hover:bg-zinc-900 hover:text-white transition-all duration-300">Join Free</a>
+        </div>
+      </div>
+      <div class="animate-fade-in delay-2 overflow-hidden rounded-3xl">
+        <img src="https://picsum.photos/seed/library-hero/1000/800" alt="Library interior"
+             class="w-full h-[420px] lg:h-[520px] object-cover transition-transform duration-700 hover:scale-105" />
+      </div>
+    </div>
+
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-zinc-100 pt-8">
+      <div><p class="text-3xl font-light">12,000+</p><p class="text-sm text-zinc-500">Books</p></div>
+      <div><p class="text-3xl font-light">40+</p><p class="text-sm text-zinc-500">Years</p></div>
+      <div><p class="text-3xl font-light">Free</p><p class="text-sm text-zinc-500">Wi-Fi</p></div>
+      <div><p class="text-3xl font-light">6</p><p class="text-sm text-zinc-500">Sections</p></div>
+    </div>
+  </section>
+
+  <!-- 3. SECTIONS GRID -->
+  <section id="sections" class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-3xl sm:text-4xl font-light tracking-tight mb-10">Our Sections</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="group p-8 rounded-2xl border border-zinc-100 bg-white hover:bg-emerald-50 transition-colors duration-300">
+        <h3 class="text-xl font-medium text-zinc-900 group-hover:text-emerald-700 transition-colors">Fiction</h3>
+        <p class="mt-2 text-zinc-500 group-hover:text-emerald-900 transition-colors">Novels, short stories and classics from every era.</p>
+      </div>
+      <div class="group p-8 rounded-2xl border border-zinc-100 bg-white hover:bg-amber-50 transition-colors duration-300">
+        <h3 class="text-xl font-medium text-zinc-900 group-hover:text-amber-700 transition-colors">Children's</h3>
+        <p class="mt-2 text-zinc-500 group-hover:text-amber-900 transition-colors">Picture books and story corners for little readers.</p>
+      </div>
+      <div class="group p-8 rounded-2xl border border-zinc-100 bg-white hover:bg-sky-50 transition-colors duration-300">
+        <h3 class="text-xl font-medium text-zinc-900 group-hover:text-sky-700 transition-colors">Science</h3>
+        <p class="mt-2 text-zinc-500 group-hover:text-sky-900 transition-colors">Physics, biology, tech and everything curious.</p>
+      </div>
+      <div class="group p-8 rounded-2xl border border-zinc-100 bg-white hover:bg-rose-50 transition-colors duration-300">
+        <h3 class="text-xl font-medium text-zinc-900 group-hover:text-rose-700 transition-colors">History</h3>
+        <p class="mt-2 text-zinc-500 group-hover:text-rose-900 transition-colors">Archives, biographies and local heritage collections.</p>
+      </div>
+      <div class="group p-8 rounded-2xl border border-zinc-100 bg-white hover:bg-violet-50 transition-colors duration-300">
+        <h3 class="text-xl font-medium text-zinc-900 group-hover:text-violet-700 transition-colors">Arts</h3>
+        <p class="mt-2 text-zinc-500 group-hover:text-violet-900 transition-colors">Painting, music, design and photography books.</p>
+      </div>
+      <div class="group p-8 rounded-2xl border border-zinc-100 bg-white hover:bg-zinc-100 transition-colors duration-300">
+        <h3 class="text-xl font-medium text-zinc-900 group-hover:text-black transition-colors">Reference</h3>
+        <p class="mt-2 text-zinc-500 group-hover:text-zinc-800 transition-colors">Journals, encyclopedias and quiet study desks.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. GALLERY -->
+  <section id="gallery" class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-3xl sm:text-4xl font-light tracking-tight mb-10">Inside the Library</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div class="group relative overflow-hidden rounded-lg">
+        <img src="https://picsum.photos/seed/reading-hall/800/600" alt="Reading Hall" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div class="absolute bottom-4 left-4 flex items-center gap-2">
+          <span class="bg-white/90 px-3 py-1 rounded-lg text-sm font-medium">Reading Hall</span>
+          <span class="bg-emerald-600 text-white text-xs px-2.5 py-1 rounded-full">Floor 1</span>
+        </div>
+      </div>
+      <div class="group relative overflow-hidden rounded-lg">
+        <img src="https://picsum.photos/seed/kids-corner/800/600" alt="Kids Corner" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div class="absolute bottom-4 left-4 flex items-center gap-2">
+          <span class="bg-white/90 px-3 py-1 rounded-lg text-sm font-medium">Kids Corner</span>
+          <span class="bg-amber-500 text-white text-xs px-2.5 py-1 rounded-full">Ground</span>
+        </div>
+      </div>
+      <div class="group relative overflow-hidden rounded-lg">
+        <img src="https://picsum.photos/seed/study-room/800/600" alt="Study Room" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div class="absolute bottom-4 left-4 flex items-center gap-2">
+          <span class="bg-white/90 px-3 py-1 rounded-lg text-sm font-medium">Study Room</span>
+          <span class="bg-violet-600 text-white text-xs px-2.5 py-1 rounded-full">Floor 2</span>
+        </div>
+      </div>
+      <div class="group relative overflow-hidden rounded-lg">
+        <img src="https://picsum.photos/seed/archive/800/600" alt="Archive" class="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-105" />
+        <div class="absolute bottom-4 left-4 flex items-center gap-2">
+          <span class="bg-white/90 px-3 py-1 rounded-lg text-sm font-medium">Archive</span>
+          <span class="bg-rose-600 text-white text-xs px-2.5 py-1 rounded-full">Basement</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. VALUES BENTO -->
+  <section class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[200px]">
+      <div class="md:col-span-2 md:row-span-2 p-8 rounded-3xl bg-slate-100 hover:bg-slate-200 transition-colors duration-300 flex flex-col justify-end">
+        <p class="text-xs uppercase tracking-widest text-slate-500 mb-2">About</p>
+        <h3 class="text-3xl font-light leading-snug">A public space built on curiosity, open to everyone in Greenwood.</h3>
+      </div>
+      <div class="p-6 rounded-3xl bg-emerald-100 hover:bg-emerald-200 transition-colors duration-300 flex flex-col justify-end">
+        <h4 class="text-lg font-medium">Community</h4><p class="text-sm text-emerald-900/70">Clubs and meetups.</p>
+      </div>
+      <div class="p-6 rounded-3xl bg-amber-100 hover:bg-amber-200 transition-colors duration-300 flex flex-col justify-end">
+        <h4 class="text-lg font-medium">40+ Years</h4><p class="text-sm text-amber-900/70">Serving readers.</p>
+      </div>
+      <div class="p-6 rounded-3xl bg-rose-100 hover:bg-rose-200 transition-colors duration-300 flex flex-col justify-end">
+        <h4 class="text-lg font-medium">Events</h4><p class="text-sm text-rose-900/70">Talks and workshops.</p>
+      </div>
+      <div class="p-6 rounded-3xl bg-violet-100 hover:bg-violet-200 transition-colors duration-300 flex flex-col justify-end">
+        <h4 class="text-lg font-medium">Digital</h4><p class="text-sm text-violet-900/70">E-books and audio.</p>
+      </div>
+      <div class="md:col-span-2 p-6 rounded-3xl bg-zinc-100 hover:bg-zinc-200 transition-colors duration-300 flex flex-col justify-end">
+        <h4 class="text-lg font-medium">Access</h4><p class="text-sm text-zinc-600">Free entry, free Wi-Fi, step-free access throughout.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. ABOUT -->
+  <section class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-4xl sm:text-5xl font-light tracking-tight max-w-3xl mb-10">Libraries are the last truly public rooms in town.</h2>
+    <div class="columns-1 sm:columns-2 gap-10 text-zinc-600 leading-relaxed space-y-4">
+      <p>Since the day we opened, Greenwood has been a place where anyone can sit down, open a book and stay as long as they like. No tickets, no pressure, just space to think.</p>
+      <p>Over the years the collection has grown to more than twelve thousand titles, and the building now holds reading halls, a children's corner, study rooms and a small archive of local history.</p>
+      <p>We host talks, workshops and weekend clubs, and we keep adding digital resources so that the library fits into modern routines without losing its calm.</p>
+      <p>Whether you come for a quiet hour, a research project or a community event, there is a seat waiting for you.</p>
+    </div>
+  </section>
+
+  <!-- 7. MEMBERSHIP -->
+  <section id="membership" class="max-w-7xl mx-auto px-6 py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      <div class="p-8 rounded-3xl bg-emerald-50 flex flex-col justify-center">
+        <h2 class="text-3xl font-light mb-3">Membership</h2>
+        <p class="text-zinc-600">Pick a plan that suits you. Every plan includes free Wi-Fi and event access.</p>
+      </div>
+
+      <!-- Basic -->
+      <div class="group relative flex flex-col rounded-3xl border border-zinc-200 overflow-hidden">
+        <div class="overflow-hidden h-40">
+          <img src="https://picsum.photos/seed/basic-plan/600/400" alt="Basic" class="w-full h-full object-cover brightness-95 transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="text-xl font-medium">Basic</h3>
+          <p class="text-3xl font-light mt-2">Free</p>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-600 flex-1">
+            <li>• Borrow 3 books</li><li>• 14-day loan</li><li>• Reading hall access</li>
+          </ul>
+          <a href="#" class="mt-6 block text-center rounded-full border border-zinc-900 py-2.5 text-sm hover:bg-zinc-900 hover:text-white transition-colors">Join Basic</a>
+        </div>
+      </div>
+
+      <!-- Student -->
+      <div class="group relative flex flex-col rounded-3xl border-2 border-emerald-500 overflow-hidden">
+        <span class="absolute top-3 right-3 z-10 bg-emerald-600 text-white text-xs px-3 py-1 rounded-full">Popular</span>
+        <div class="overflow-hidden h-40">
+          <img src="https://picsum.photos/seed/student-plan/600/400" alt="Student" class="w-full h-full object-cover brightness-95 transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="text-xl font-medium">Student</h3>
+          <p class="text-3xl font-light mt-2">₹199<span class="text-sm text-zinc-500">/mo</span></p>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-600 flex-1">
+            <li>• Borrow 8 books</li><li>• Study room booking</li><li>• Digital library</li>
+          </ul>
+          <a href="#" class="mt-6 block text-center rounded-full bg-emerald-600 text-white py-2.5 text-sm hover:bg-emerald-700 transition-colors">Join Student</a>
+        </div>
+      </div>
+
+      <!-- Family -->
+      <div class="group relative flex flex-col rounded-3xl border border-zinc-200 overflow-hidden">
+        <div class="overflow-hidden h-40">
+          <img src="https://picsum.photos/seed/family-plan/600/400" alt="Family" class="w-full h-full object-cover brightness-95 transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <div class="p-6 flex flex-col flex-1">
+          <h3 class="text-xl font-medium">Family</h3>
+          <p class="text-3xl font-light mt-2">₹499<span class="text-sm text-zinc-500">/mo</span></p>
+          <ul class="mt-4 space-y-2 text-sm text-zinc-600 flex-1">
+            <li>• Up to 5 members</li><li>• Borrow 20 books</li><li>• Kids workshops</li>
+          </ul>
+          <a href="#" class="mt-6 block text-center rounded-full border border-zinc-900 py-2.5 text-sm hover:bg-zinc-900 hover:text-white transition-colors">Join Family</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. TESTIMONIAL -->
+  <section class="max-w-4xl mx-auto px-6 py-20 text-center">
+    <blockquote class="text-2xl sm:text-3xl font-light leading-relaxed text-zinc-800">
+      “Greenwood is the one place in the city where I can actually focus. It feels like it belongs to all of us.”
+    </blockquote>
+    <div class="mt-8 flex items-center justify-center gap-4">
+      <img src="https://picsum.photos/seed/avatar-person/120/120" alt="Avatar"
+           class="w-14 h-14 rounded-full object-cover grayscale hover:grayscale-0 transition-all duration-500" />
+      <div class="text-left">
+        <p class="font-medium">Aanya Mehta</p>
+        <p class="text-sm text-zinc-500">Member since 2019</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. CONTACT CTA -->
+  <section id="contact" class="max-w-7xl mx-auto px-6 py-16">
+    <div class="rounded-3xl bg-emerald-50 p-10 sm:p-16">
+      <h2 class="text-3xl sm:text-5xl font-light tracking-tight leading-tight">12 Garden Road, Greenwood</h2>
+      <p class="mt-4 text-zinc-600">Open Mon–Sat, 9:00 AM – 7:00 PM. Closed on Sundays.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <a href="https://maps.google.com" target="_blank" class="rounded-full bg-zinc-900 text-white px-7 py-3 text-sm hover:bg-emerald-700 transition-colors">Get Directions</a>
+        <a href="mailto:hello@greenwoodlibrary.org" class="rounded-full border border-zinc-900 px-7 py-3 text-sm hover:bg-zinc-900 hover:text-white transition-colors">hello@greenwoodlibrary.org</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. EVENTS -->
+  <section id="events" class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-3xl sm:text-4xl font-light tracking-tight mb-10">Upcoming Events</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <article class="group">
+        <div class="overflow-hidden rounded-2xl">
+          <img src="https://picsum.photos/seed/event-one/600/450" alt="Book Club" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <h3 class="mt-4 font-medium group-hover:text-emerald-700 transition-colors">Monthly Book Club</h3>
+        <p class="text-sm text-zinc-500">5 Dec 2026</p>
+      </article>
+      <article class="group">
+        <div class="overflow-hidden rounded-2xl">
+          <img src="https://picsum.photos/seed/event-two/600/450" alt="Author Talk" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <h3 class="mt-4 font-medium group-hover:text-emerald-700 transition-colors">Author Talk</h3>
+        <p class="text-sm text-zinc-500">12 Dec 2026</p>
+      </article>
+      <article class="group">
+        <div class="overflow-hidden rounded-2xl">
+          <img src="https://picsum.photos/seed/event-three/600/450" alt="Kids Story Hour" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <h3 class="mt-4 font-medium group-hover:text-emerald-700 transition-colors">Kids Story Hour</h3>
+        <p class="text-sm text-zinc-500">19 Dec 2026</p>
+      </article>
+      <article class="group">
+        <div class="overflow-hidden rounded-2xl">
+          <img src="https://picsum.photos/seed/event-four/600/450" alt="Coding Workshop" class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-105" />
+        </div>
+        <h3 class="mt-4 font-medium group-hover:text-emerald-700 transition-colors">Coding Workshop</h3>
+        <p class="text-sm text-zinc-500">2 Jan 2027</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 11. FOOTER -->
+  <footer class="border-t border-zinc-100 mt-16">
+    <div class="max-w-7xl mx-auto px-6 py-14 grid grid-cols-2 md:grid-cols-4 gap-10 text-sm">
+      <div class="col-span-2 md:col-span-1">
+        <p class="text-xl font-semibold">Greenwood</p>
+        <p class="mt-3 text-zinc-500">A quiet place for loud ideas.</p>
+        <div class="mt-5 flex gap-3">
+          <a href="#" class="w-9 h-9 rounded-full border border-zinc-200 flex items-center justify-center hover:bg-zinc-900 hover:text-white transition-colors">f</a>
+          <a href="#" class="w-9 h-9 rounded-full border border-zinc-200 flex items-center justify-center hover:bg-zinc-900 hover:text-white transition-colors">in</a>
+          <a href="#" class="w-9 h-9 rounded-full border border-zinc-200 flex items-center justify-center hover:bg-zinc-900 hover:text-white transition-colors">x</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-medium mb-3">Pages</h4>
+        <ul class="space-y-2 text-zinc-500">
+          <li><a href="#gallery" class="hover:text-zinc-900 transition-colors">Gallery</a></li>
+          <li><a href="#membership" class="hover:text-zinc-900 transition-colors">Membership</a></li>
+          <li><a href="#events" class="hover:text-zinc-900 transition-colors">Events</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-medium mb-3">Sections</h4>
+        <ul class="space-y-2 text-zinc-500">
+          <li><a href="#sections" class="hover:text-zinc-900 transition-colors">Fiction</a></li>
+          <li><a href="#sections" class="hover:text-zinc-900 transition-colors">Science</a></li>
+          <li><a href="#sections" class="hover:text-zinc-900 transition-colors">History</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-medium mb-3">Details</h4>
+        <ul class="space-y-2 text-zinc-500">
+          <li>12 Garden Road</li>
+          <li>Mon–Sat, 9–7</li>
+          <li><a href="mailto:hello@greenwoodlibrary.org" class="hover:text-zinc-900 transition-colors">Email us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 py-6 border-t border-zinc-100 flex flex-col sm:flex-row justify-between gap-3 text-xs text-zinc-500">
+      <p>© 2026 Greenwood Public Library. All rights reserved.</p>
+      <div class="flex gap-5">
+        <a href="#" class="hover:text-zinc-900 transition-colors">Privacy</a>
+        <a href="#" class="hover:text-zinc-900 transition-colors">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
